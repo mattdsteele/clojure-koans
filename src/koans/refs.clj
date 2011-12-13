@@ -9,12 +9,12 @@
   (= "hello" @the-world)
 
   "You can be the change you wish to see in the world."
-  (= __ (do
+  (= "better" (do
           (dosync (ref-set the-world "better"))
           @the-world))
 
   "Alter where you need not replace"
-  (= __ (let [exclamator (fn [x] (str x "!"))]
+  (= "better!!!" (let [exclamator (fn [x] (str x "!"))]
           (dosync
             (alter the-world exclamator)
             (alter the-world exclamator)
